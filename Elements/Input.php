@@ -141,6 +141,20 @@ class Input
 
 
     /**
+     * Function to add fields to the form.
+     *
+     * @param string $fieldType
+     */
+    public function addField(string $fieldType): void
+    {
+        if (!in_array($fieldType, ['input', 'textarea', 'select', 'button', 'date', 'time', 'url', 'tel', 'search', 'color'])) {
+            throw new
+        }
+        $this->inputConfig['fieldType'] = $fieldType;
+    }
+
+
+    /**
      * Render the input based on the data entered.
      *
      * @return string
